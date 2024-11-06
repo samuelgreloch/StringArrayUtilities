@@ -25,7 +25,12 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-        return null;
+
+        int spot = array.length;
+        String last = array[spot - 1];
+//return array[array.length-1];
+
+        return last;
     }
 
     /**
@@ -33,7 +38,13 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
-        return null;
+
+        int spot = array.length;
+        String last = array[spot - 2];
+
+
+        return last;
+
     }
 
     /**
@@ -42,7 +53,15 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        return false;
+        for (String s : array) {
+            if (s.contains(value)) {
+                boolean outcome = true;
+
+            }
+
+        }
+        return true;
+
     }
 
     /**
@@ -50,24 +69,39 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        return null;
+
+        String sdrawkcaB = " ";  //doing backwards you do that
+
+        for (int i = 0; i < array.length; i++) {
+            sdrawkcaB = array[i].concat(" " + sdrawkcaB);
+        }
+
+        sdrawkcaB.trim();
+        String[] answer = sdrawkcaB.split(" ");
+        return answer;
     }
+
 
     /**
      * @param array array of String objects
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
+        String one = array[0];
+        String two = array[array.length - 1];
+        if (one == two) {
+            return true;
+        }
         return false;
+
+
     }
 
     /**
      * @param array array of String objects
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
-    public static boolean isPangramic(String[] array) {
-        return false;
-    }
+    public static boolean isPangramic(String[] array) {return false;}
 
     /**
      * @param array array of String objects
@@ -75,7 +109,13 @@ public class StringArrayUtils {
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        //String[] str = array;
+         int count = 0;
+        for (String str : array) {
+            if (str.equals(value)) count++;
+        }
+                return count;
+
     }
 
     /**
@@ -84,8 +124,25 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        return null;
+
+
+
+        String newPhrase= "";
+        for (String word : array) {
+            if (word != valueToRemove) {
+                newPhrase = newPhrase.concat(" "+ word);
+            }
+        }
+        newPhrase = newPhrase.trim();
+        String[] answer = newPhrase.split(" ");
+        return answer;
     }
+
+        //for (int i = 0, value=0; i<array.length;i++){
+         //   if (i!=valueToRemove){
+           //     array_new[valueToRemove]= arra
+            //}
+        //}}
 
     /**
      * @param array array of chars
